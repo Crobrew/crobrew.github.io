@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Package Manager Documentation</title>
+    <title>Crobrew Documentation</title>
     <style>
         /* General Reset */
         * {
@@ -56,11 +56,55 @@
             flex: 1 1 20%;
             background: #181825;
             padding: 1rem;
+            border-right: 1px solid #313244;
+        }
+
+        .sidebar h3 {
+            color: #f38ba8;
+            margin-bottom: 1rem;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar ul li a {
+            color: #89b4fa;
+            text-decoration: none;
+        }
+
+        .sidebar ul li a:hover {
+            color: #f38ba8;
         }
 
         .content {
             flex: 1 1 75%;
             padding: 1rem;
+        }
+
+        .content h2 {
+            color: #f38ba8;
+            margin-bottom: 1rem;
+        }
+
+        .content p, .content ul {
+            margin-bottom: 1rem;
+        }
+
+        .content pre {
+            background: #313244;
+            color: #cdd6f4;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .content pre code {
+            font-family: 'Fira Code', monospace;
         }
 
         footer {
@@ -71,58 +115,131 @@
             margin-top: 2rem;
             border-top: 1px solid #313244;
         }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                flex: 1 1 100%;
+                border-right: none;
+                border-bottom: 1px solid #313244;
+            }
+
+            .content {
+                flex: 1 1 100%;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Package Manager Documentation</h1>
+        <h1>Crobrew</h1>
+        <p>A Simple, Lightweight Package Manager</p>
     </header>
     <nav>
         <a href="#getting-started">Getting Started</a>
-        <a href="#commands">Commands</a>
-        <a href="#examples">Examples</a>
-        <a href="#faq">FAQ</a>
+        <a href="#installation">Installation</a>
+        <a href="#usage">Usage</a>
+        <a href="#features">Features</a>
+        <a href="#supported-package-managers">Supported Package Managers</a>
     </nav>
     <main>
         <aside class="sidebar">
             <h3>Table of Contents</h3>
             <ul>
                 <li><a href="#getting-started">Getting Started</a></li>
-                <li><a href="#commands">Commands</a></li>
-                <li><a href="#examples">Examples</a></li>
-                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#installation">Installation</a></li>
+                <li><a href="#usage">Usage</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#supported-package-managers">Supported Package Managers</a></li>
             </ul>
         </aside>
         <section class="content">
             <h2 id="getting-started">Getting Started</h2>
-            <p>Welcome to the documentation for your package manager. This section will guide you through the installation and setup process.</p>
+            <p>Crobrew is still in its early stages, so some features might not work as expected. It is designed to be a simple and lightweight package manager for multiple platforms.</p>
             
-            <h2 id="commands">Commands</h2>
-            <p>Here is a list of commands you can use with the package manager:</p>
+            <h2 id="installation">Installation</h2>
+            <p>To install Crobrew, use the following command:</p>
+            <pre><code>go install github.com/chersbobers/crobrew@latest</code></pre>
+            <p>Ensure Go is added to your PATH:</p>
+            <pre><code>echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> ~/.bashrc && source ~/.bashrc</code></pre>
+            <h3>Platform-Specific Instructions</h3>
+            <h4>ChromeOS</h4>
+            <ol>
+                <li>Enable Linux (Beta) in ChromeOS Settings.</li>
+                <li>Install Go:</li>
+                <pre><code>sudo apt-get update && sudo apt-get install golang-go</code></pre>
+            </ol>
+            <h4>Linux</h4>
+            <p>Install Go using your distribution's package manager:</p>
             <ul>
-                <li><code>install</code> - Install a package.</li>
-                <li><code>update</code> - Update a package.</li>
-                <li><code>remove</code> - Remove a package.</li>
+                <li>Ubuntu/Debian: <code>sudo apt-get install golang-go</code></li>
+                <li>Fedora: <code>sudo dnf install golang</code></li>
+                <li>Arch Linux: <code>sudo pacman -S go</code></li>
             </ul>
+            <h4>macOS</h4>
+            <p>Install Go using Homebrew:</p>
+            <pre><code>brew install go</code></pre>
+            <h4>Windows</h4>
+            <p>Download Go from <a href="https://golang.org">golang.org</a> and run the installer. Add Go to your PATH:</p>
+            <pre><code>setx PATH "%PATH%;%USERPROFILE%\go\bin"</code></pre>
             
-            <h2 id="examples">Examples</h2>
-            <p>Below are some examples of how to use the package manager:</p>
-            <pre><code># Install a package
-package-manager install package-name
+            <h2 id="usage">Usage</h2>
+            <p>Crobrew can be used in two modes: command-line and interactive.</p>
+            <h3>Command-Line Mode</h3>
+            <pre><code># Update package list
+cro update
 
-# Update a package
-package-manager update package-name
+# Search for packages
+cro search firefox
+
+# Install a package
+cro install firefox
 
 # Remove a package
-package-manager remove package-name
+cro remove firefox
             </code></pre>
+            <h3>Interactive Mode</h3>
+            <p>Run <code>cro</code> without arguments to start interactive mode, which provides a menu-based interface.</p>
             
-            <h2 id="faq">FAQ</h2>
-            <p>Find answers to frequently asked questions here.</p>
+            <h2 id="features">Features</h2>
+            <ul>
+                <li>Automatic package manager detection for all major platforms.</li>
+                <li>Update package lists.</li>
+                <li>Search for packages.</li>
+                <li>Install and remove packages.</li>
+                <li>Supports multiple package managers (apt, dnf, pacman, brew, chocolatey, snap, WSL).</li>
+            </ul>
+            
+            <h2 id="supported-package-managers">Supported Package Managers</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>OS</th>
+                        <th>Package Managers</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ChromeOS</td>
+                        <td>apt, snap</td>
+                    </tr>
+                    <tr>
+                        <td>Linux</td>
+                        <td>apt, dnf, pacman, snap</td>
+                    </tr>
+                    <tr>
+                        <td>macOS</td>
+                        <td>brew</td>
+                    </tr>
+                    <tr>
+                        <td>Windows</td>
+                        <td>chocolatey, WSL-apt</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
     </main>
     <footer>
-        <p>&copy; 2023 Your Package Manager. All rights reserved.</p>
+        <p>&copy; 2025 Crobrew. All rights reserved.</p>
     </footer>
 </body>
 </html>
