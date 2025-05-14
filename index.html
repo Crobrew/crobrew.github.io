@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package Manager Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        nav {
+            background: #444;
+            color: #fff;
+            padding: 1rem;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 1rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 2rem;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+        .sidebar {
+            float: left;
+            width: 20%;
+            background: #f4f4f4;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+        .content {
+            float: left;
+            width: 75%;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Package Manager Documentation</h1>
+    </header>
+    <nav>
+        <a href="#getting-started">Getting Started</a>
+        <a href="#commands">Commands</a>
+        <a href="#examples">Examples</a>
+        <a href="#faq">FAQ</a>
+    </nav>
+    <main class="clearfix">
+        <aside class="sidebar">
+            <h3>Table of Contents</h3>
+            <ul>
+                <li><a href="#getting-started">Getting Started</a></li>
+                <li><a href="#commands">Commands</a></li>
+                <li><a href="#examples">Examples</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </aside>
+        <section class="content">
+            <h2 id="getting-started">Getting Started</h2>
+            <p>Welcome to the documentation for your package manager. This section will guide you through the installation and setup process.</p>
+            
+            <h2 id="commands">Commands</h2>
+            <p>Here is a list of commands you can use with the package manager:</p>
+            <ul>
+                <li><code>install</code> - Install a package.</li>
+                <li><code>update</code> - Update a package.</li>
+                <li><code>remove</code> - Remove a package.</li>
+            </ul>
+            
+            <h2 id="examples">Examples</h2>
+            <p>Below are some examples of how to use the package manager:</p>
+            <pre><code># Install a package
+package-manager install package-name
+
+# Update a package
+package-manager update package-name
+
+# Remove a package
+package-manager remove package-name
+            </code></pre>
+            
+            <h2 id="faq">FAQ</h2>
+            <p>Find answers to frequently asked questions here.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Your Package Manager. All rights reserved.</p>
+    </footer>
+</body>
+</html>
