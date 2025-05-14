@@ -5,58 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Package Manager Documentation</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* General Reset */
+        * {
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            box-sizing: border-box;
         }
+
+        body {
+            font-family: 'Fira Code', monospace, Arial, sans-serif;
+            background: #1e1e2e;
+            color: #cdd6f4;
+            line-height: 1.6;
+            margin: 0;
+        }
+
         header {
-            background: #333;
-            color: #fff;
+            background: #181825;
+            color: #cdd6f4;
             padding: 1rem 0;
             text-align: center;
+            border-bottom: 1px solid #313244;
         }
+
         nav {
-            background: #444;
-            color: #fff;
+            background: #313244;
             padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
         }
+
         nav a {
-            color: #fff;
+            color: #89b4fa;
             text-decoration: none;
-            margin-right: 1rem;
+            font-weight: bold;
         }
+
         nav a:hover {
-            text-decoration: underline;
+            color: #f38ba8;
         }
+
         main {
+            display: flex;
+            flex-wrap: wrap;
             padding: 2rem;
         }
+
+        .sidebar {
+            flex: 1 1 20%;
+            background: #181825;
+            padding: 1rem;
+        }
+
+        .content {
+            flex: 1 1 75%;
+            padding: 1rem;
+        }
+
         footer {
-            background: #333;
-            color: #fff;
+            background: #181825;
+            color: #cdd6f4;
             text-align: center;
             padding: 1rem 0;
             margin-top: 2rem;
-        }
-        .sidebar {
-            float: left;
-            width: 20%;
-            background: #f4f4f4;
-            padding: 1rem;
-            box-sizing: border-box;
-        }
-        .content {
-            float: left;
-            width: 75%;
-            padding: 1rem;
-            box-sizing: border-box;
-        }
-        .clearfix::after {
-            content: "";
-            display: table;
-            clear: both;
+            border-top: 1px solid #313244;
         }
     </style>
 </head>
@@ -70,7 +83,7 @@
         <a href="#examples">Examples</a>
         <a href="#faq">FAQ</a>
     </nav>
-    <main class="clearfix">
+    <main>
         <aside class="sidebar">
             <h3>Table of Contents</h3>
             <ul>
